@@ -34,3 +34,7 @@
     height: 31.25px;
     border: 1px solid black;
 }
+
+.boxColored{
+    background-color: gray;
+}
