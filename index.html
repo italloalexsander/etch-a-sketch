@@ -16,17 +16,29 @@
             <h1 id="title">Etch-A-Sketch</h1>
             <p id="instructions">Mouse over below to start painting!</p>
             <div id="content-text-wrapper">
-                <div id="left-side">
-                    <p id="selectionGrid">Grid (NxN)</p>
+                <div class="left-side">
+                    <p id="selectionGrid">Grid (NxN): </p>
                     <input type="number" id="quantity" name="quantity" min="1" max="100" value="16">
                 </div>
-                <div class="right-side">
-                    <p id="selectionColorType">Color</p>
+                <div class="center">
+                    <p id="selectionColorType">Color: </p>
                     <input type="color" id="valueColor" name="color" value="#565251">
+                </div>
+                <div class="right-side">
+                    <p id="modeType">Mode: </p>
+                    <form id="modeSelection">
+                        <input type="radio" id="html" name="modeSelected" value="default" checked>
+                        <label for="default">Default</label><br>
+                        <input type="radio" id="css" name="modeSelected" value="rainbow">
+                        <label for="rainbow">Rainbow</label><br>
+                        <input type="radio" id="javascript" name="modeSelected" value="fade">
+                        <label for="fade">Fade</label>
+                    </form>
                 </div>
             </div>
         </div>
         <div id="canvas"></div>
+        <button id="eraser">Clear Canvas</button>
         <footer id="footer">Made by Itallo Alexsander @ <a href="https://github.com/italloalexsander/etch-a-sketch">Github</a></footer>
     </div>
 </body>

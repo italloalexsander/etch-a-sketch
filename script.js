@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const input = document.getElementById('quantity');
 const rgbSelector = document.getElementById('valueColor');
+const eraser = document.getElementById('eraser');
 
 inputHandler(input.value);
 
@@ -14,6 +15,9 @@ rgbSelector.addEventListener('input', ()=> {
     rgb = rgbSelector.value;
 })
 
+eraser.addEventListener('click', ()=>{
+    inputHandler(input.value);
+})
 
 
 function mouseOverHandler(){
