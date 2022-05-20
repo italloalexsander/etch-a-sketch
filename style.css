@@ -15,8 +15,8 @@
 
 #title{
     padding: 25px;
-    margin-top: -100px;
-    margin-bottom: 100px;
+    margin-top: -50px;
+    margin-bottom: 50px;
 }
 
 #canvas{
@@ -24,4 +24,13 @@
     height: 500px;
     border: 20px solid black;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box16{
+    box-sizing: border-box;
+    width: 31.25px;
+    height: 31.25px;
+    border: 1px solid black;
 }
