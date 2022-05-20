@@ -2,10 +2,12 @@ const canvas = document.getElementById('canvas');
 const input = document.getElementById('quantity');
 const rgbSelector = document.getElementById('valueColor');
 const eraser = document.getElementById('eraser');
-
-inputHandler(input.value);
+const modeSelector = document.getElementsByClassName('selection');
 
 let rgb = rgbSelector.value;
+let mode = 'default';
+
+inputHandler(input.value);
 
 input.addEventListener('input', () => {
     inputHandler(input.value);
@@ -19,16 +21,40 @@ eraser.addEventListener('click', ()=>{
     inputHandler(input.value);
 })
 
+Array.from(modeSelector).forEach(element => {
+    element.addEventListener('change', ()=>{
+        mode = element.value;
+    })
+})
 
+const randomColorGenerator = ()=> {
+    red = Math.random() * (255 - 0 + 1) + 0
+    blue = Math.random() * (255 - 0 + 1) + 0
+    green = Math.random() * (255 - 0 + 1) + 0
+
+    return [red, blue, green];
+}
+
+//Need to fix so that there is a way to immediately change to the new mode without needing to clear the canvas
 function mouseOverHandler(){
     const boxes = document.getElementsByClassName('boxGrid');
-    console.log(boxes);
-    Array.from(boxes).forEach(element => {
-        element.addEventListener('mouseover', () => {
-            element.style.backgroundColor = rgb;
+    if(mode === 'default'){
+        Array.from(boxes).forEach(element => {
+            element.addEventListener('mouseover', () => {
+                element.style.backgroundColor = rgb;
+            });
         });
-    });
+    }
+    else if(mode === 'rainbow'){
+        Array.from(boxes).forEach(element => {
+            element.addEventListener('mouseover', () => {
+                let randomColor = randomColorGenerator()
+                element.style.backgroundColor = `rgb(${randomColor[0]}, ${randomColor[1]}, ${randomColor[2]})`;
+            });
+        });
+    }
 }
+
 
 function selectionHandler(input){
     //Maybe add a way to calculate the size of the box by dividing the canvas by the input?
