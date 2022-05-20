@@ -1,7 +1,13 @@
 const canvas = document.getElementById('canvas');
+const input = document.getElementById('quantity');
+
+input.addEventListener('input', () => {
+    inputHandler(input.value);
+});
 
 
-const mouseOverHandler = () => {
+
+function mouseOverHandler(){
     const boxes = document.getElementsByClassName('boxGrid');
     console.log(boxes);
     Array.from(boxes).forEach(element => {
@@ -11,12 +17,13 @@ const mouseOverHandler = () => {
     });
 }
 
-const selectionHandler = (input) =>{
+function selectionHandler(input){
     //Maybe add a way to calculate the size of the box by dividing the canvas by the input?
     /*box-sizing: border-box;
     width: 31.25px;
     height: 31.25px;
     border: 1px solid black;  This CSS is here just for reference to the function below*/
+    canvas.innerHTML=""
     let sizeOfDivs = (500/input);
     sizeOfDivs.toFixed(1);
     for(i = 0;i < input*input; i++){
@@ -31,7 +38,12 @@ const selectionHandler = (input) =>{
     mouseOverHandler();
 }
 
-let grid = 32;
+function inputHandler(inputValue){
+    if(inputValue > 100){
+        inputValue = 100;
+        alert("Grid should not be larger than 100")
+        input.value=100;
+    }
+    selectionHandler(inputValue);
+}
 
-
-selectionHandler(grid);
