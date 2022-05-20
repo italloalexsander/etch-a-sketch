@@ -15,8 +15,7 @@
 
 #title{
     padding: 25px;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 #canvas{
@@ -28,13 +27,14 @@
     flex-wrap: wrap;
 }
 
-.box16{
-    box-sizing: border-box;
-    width: 31.25px;
-    height: 31.25px;
-    border: 1px solid black;
-}
-
 .boxColored{
     background-color: gray;
+}
+
+#content-text-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: large;
+    padding: 25px;
 }
