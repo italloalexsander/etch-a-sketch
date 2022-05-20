@@ -31,10 +31,37 @@
     background-color: gray;
 }
 
+#outer-text-box-wrapper{
+    text-align: center;
+}
+
 #content-text-wrapper{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     font-size: large;
     padding: 25px;
+    text-align: center;
+}
+
+#instructions{
+    font-size: larger;
+}
+
+#footer{
+    margin-top: auto;
+    padding: 25px;
+    font-family: Roboco;
+    font-weight: bold;
+}
+
+#footer a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+#footer a:hover{
+    color: green;
+    transform: scale(1.2);
 }

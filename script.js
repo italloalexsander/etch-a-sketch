@@ -1,9 +1,18 @@
 const canvas = document.getElementById('canvas');
 const input = document.getElementById('quantity');
+const rgbSelector = document.getElementById('valueColor');
+
+inputHandler(input.value);
+
+let rgb = rgbSelector.value;
 
 input.addEventListener('input', () => {
     inputHandler(input.value);
 });
+
+rgbSelector.addEventListener('input', ()=> {
+    rgb = rgbSelector.value;
+})
 
 
 
@@ -12,7 +21,7 @@ function mouseOverHandler(){
     console.log(boxes);
     Array.from(boxes).forEach(element => {
         element.addEventListener('mouseover', () => {
-            element.classList.add('boxColored');
+            element.style.backgroundColor = rgb;
         });
     });
 }
