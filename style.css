@@ -51,6 +51,10 @@
     gap: 25px;
 }
 
+#quantity{
+    width: 50px;
+}
+
 #instructions{
     font-size: larger;
 }
