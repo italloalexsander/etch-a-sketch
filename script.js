@@ -64,7 +64,7 @@ function selectionHandler(input){
     height: 31.25px;
     border: 1px solid black;  This CSS is here just for reference to the function below*/
     canvas.innerHTML=""
-    let sizeOfDivs = (500/input);
+    let sizeOfDivs = (600/input);
     sizeOfDivs.toFixed(1);
     for(i = 0;i < input*input; i++){
         aux = document.createElement('div');

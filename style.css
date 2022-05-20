@@ -25,9 +25,10 @@
 }
 
 #canvas{
-    width: 500px;
-    height: 500px;
-    border: 20px solid black;
+    width: 600px;
+    height: 600px;
+    border: 10px solid black;
+    box-shadow: inset;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
