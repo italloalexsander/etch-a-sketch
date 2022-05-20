@@ -24,6 +24,7 @@ eraser.addEventListener('click', ()=>{
 Array.from(modeSelector).forEach(element => {
     element.addEventListener('change', ()=>{
         mode = element.value;
+        mouseOverHandler();
     })
 })
 
@@ -50,7 +51,7 @@ function mouseOverHandler(){
             element.addEventListener('mouseover', () => {
                 let randomColor = randomColorGenerator()
                 element.style.backgroundColor = `rgb(${randomColor[0]}, ${randomColor[1]}, ${randomColor[2]})`;
-            });
+            })
         });
     }
 }
